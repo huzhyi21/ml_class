@@ -26,12 +26,16 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
+% determine mu and sigma
+for i = 1:columns(X)
+  mu(i) = mean(X(:,i))
+  sigma(i) = std(X(:,i))
+end
 
-
-
-
-
-
+%normalize features by calculating (value - mu)/sigma for each value per column
+for i = 1:columns(X)
+  X_norm(:,i) = (X(:,i) - mu(i)) / sigma(i)
+end
 
 
 % ============================================================

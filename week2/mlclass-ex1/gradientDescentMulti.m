@@ -18,7 +18,12 @@ for iter = 1:num_iters
     %
 
 
-
+  error = X * theta - y;
+  temp0 = zeros(size(X,2),1);
+  for i = 1:length(error)
+    temp0 = temp0 + (error(i) * X(i,:)');
+  end
+  theta = theta - ((alpha* 1/m) * temp0);
 
 
 
