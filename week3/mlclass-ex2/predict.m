@@ -16,8 +16,13 @@ p = zeros(m, 1);
 %
 
 
+p = sigmoid(X*theta);
+display (p)
+p (p >= 0.5) = 1;
+p (p < 0.5) = 0;
+display (p)
 
-
+% 100x3 * 3x1  = 100x1
 
 
 

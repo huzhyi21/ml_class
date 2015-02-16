@@ -19,7 +19,11 @@
 %% Initialization
 clear ; close all; clc
 % set working directory
-chdir /Users/janbrusch/Documents/coursera/ml_class/week3/mlclass-ex2
+% mac:
+% chdir /Users/janbrusch/Documents/coursera/ml_class/week3/mlclass-ex2
+% win:
+chdir C:/Users/Jan Brusch/Documents/Coding/Octave/ml_class/week3/mlclass-ex2
+
 
 %% Load Data
 %  The first two columns contains the exam scores and the third column
