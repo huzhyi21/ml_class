@@ -17,6 +17,12 @@
 %  or any other files other than those mentioned above.
 %
 
+% set working directory
+% mac:
+% chdir /Users/janbrusch/Documents/coursera/ml_class/week3/mlclass-ex2
+% win:
+chdir C:/Users/Jan Brusch/Documents/Coding/Octave/ml_class/week3/mlclass-ex2
+
 %% Initialization
 clear ; close all; clc
 
