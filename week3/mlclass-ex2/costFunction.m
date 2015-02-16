@@ -21,9 +21,14 @@ grad = zeros(size(theta));
 %
 
 
+% h0x denotes Hyopthesis of X
+h0x = sigmoid(X*theta);
 
+%cost function
+J = (1/m) * sum(-y'*log(h0x) - (1-y')*log(1-h0x))
 
-
+% grad function
+grad = (1./m) * (X'*(h0x - y))
 
 
 
