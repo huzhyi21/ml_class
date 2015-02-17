@@ -10,7 +10,9 @@ g = zeros(size(z));
 %               vector or scalar).
 
 %class(z)
-g = arrayfun(@(x)1/(1+exp(-x)), z);
+% g = arrayfun(@(x)1/(1+exp(-x)), z)
+
+g = 1./(1+exp(-z));
 
 % =============================================================
 
