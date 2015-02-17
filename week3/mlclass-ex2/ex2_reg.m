@@ -19,9 +19,9 @@
 
 % set working directory
 % mac:
-% chdir /Users/janbrusch/Documents/coursera/ml_class/week3/mlclass-ex2
+chdir /Users/janbrusch/Documents/coursera/ml_class/week3/mlclass-ex2
 % win:
-chdir C:/Users/Jan Brusch/Documents/Coding/Octave/ml_class/week3/mlclass-ex2
+% chdir C:/Users/Jan Brusch/Documents/Coding/Octave/ml_class/week3/mlclass-ex2
 
 %% Initialization
 clear ; close all; clc
@@ -93,7 +93,7 @@ pause;
 initial_theta = zeros(size(X, 2), 1);
 
 % Set regularization parameter lambda to 1 (you should vary this)
-lambda = 1;
+lambda = 0.5;
 
 % Set Options
 options = optimset('GradObj', 'on', 'MaxIter', 400);
