@@ -18,6 +18,11 @@
 
 %% Initialization
 clear ; close all; clc
+% set working directory
+% mac:
+chdir /Users/janbrusch/Documents/coursera/ml_class/week4/mlclass-ex3
+% win:
+% chdir C:/Users/Jan Brusch/Documents/Coding/Octave/ml_class/week3/mlclass-ex2
 
 %% Setup the parameters you will use for this part of the exercise
 input_layer_size  = 400;  % 20x20 Input Images of Digits
