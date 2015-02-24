@@ -20,9 +20,9 @@
 clear ; close all; clc
 % set working directory
 % mac:
-% chdir /Users/janbrusch/Documents/coursera/ml_class/week3/mlclass-ex2
+chdir /Users/janbrusch/Documents/coursera/ml_class/week3/mlclass-ex2
 % win:
-chdir C:/Users/Jan Brusch/Documents/Coding/Octave/ml_class/week3/mlclass-ex2
+% chdir C:/Users/Jan Brusch/Documents/Coding/Octave/ml_class/week3/mlclass-ex2
 
 
 %% Load Data
