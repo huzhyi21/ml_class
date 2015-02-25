@@ -49,8 +49,8 @@ X = [ones(m, 1) X];
 %                 initial_theta, options);
 %
 
-
-
+options = optimset("GradObj", "on", "Maxiter", 50);
+[all_theta] = fmincg(@(t), lrCostFunction(t, X, (y == c), lambda)), all_theta, options)
 
 
 
