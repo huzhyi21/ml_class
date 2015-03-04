@@ -63,22 +63,46 @@ Theta2_grad = zeros(size(Theta2));
 %
 
 
+% part1
+%Compute output layer a3
+X = [ones(m, 1) X];
+hidden_layer = sigmoid(X*Theta1');
+hidden_layer = [ones(size(hidden_layer, 1),1) hidden_layer];
+output_layer = sigmoid(hidden_layer*Theta2');
 
+%build y as logical matrix
+y_matrix = eye(num_labels)(y,:);
 
+%compute cost J
+reg_term = (lambda/(2*m)) * (sum(sum((Theta1(:,[2:end]).^2))) + sum(sum((Theta2(:,[2:end]).^2))));
+J = (1/m) * (sum(sum((-1*y_matrix).*log(output_layer) - (1-y_matrix).*log(1-output_layer)))) + reg_term;
 
+%part2
+delta3 = zeros(size(y_matrix));
+delta2 = zeros(m, hidden_layer_size);
 
+for t = 1:m
+  %forward propagation for each m
+  a1 = X(t,:);
+  z2 = a1 * Theta1';
+  a2 = [1 sigmoid(z2)];
+  z3 = a2 * Theta2';
+  a3 = sigmoid(z3);
+  
+  %delta for each node for each m
+  delta3(t,:) = a3 - y_matrix(t,:);
+  delta2(t,:) = (delta3(t,:)*Theta2(:,[2:end])).*sigmoidGradient(z2);
 
+end
 
+D1 = delta2' * X;
+D2 = delta3' * hidden_layer;
 
-
-
-
-
-
-
-
-
-
+%regulators
+Theta1_grad(:,1) = D1(:,1)./m;
+Theta1_grad(:,[2:end]) = D1(:,[2:end])./m + (lambda/m)*Theta1(:,[2:end]);
+Theta2_grad(:,1) = D2(:,1)./m;
+Theta2_grad(:,[2:end]) = D2(:,[2:end])./m + (lambda/m)*Theta2(:,[2:end]);
 
 % -------------------------------------------------------------
 
