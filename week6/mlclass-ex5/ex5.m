@@ -218,3 +218,8 @@ end
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
+
+
+%computing testset error
+[theta] = trainLinearReg(X_poly, y, 3)
+error_test = linearRegCostFunction(X_poly_test, ytest, theta, 0)
