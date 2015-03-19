@@ -26,7 +26,12 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
-
+%concatenate idx as last col of X
+a = cat(2,X,idx);
+for i = 1:K
+  %centroids(i) = (sum of all vectors where idx column == i) / (sum of all entries in the idx column == i / i [equals the number of entries])
+  centroids(i,:) = sum(a(:,1:n)(a(:,end) == i,:)) / (sum(a(:,end)(a(:,end) == i,:))/i);
+end
 
 
 
